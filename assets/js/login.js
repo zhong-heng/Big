@@ -50,7 +50,7 @@ $(function () {
         let data = $(this).serialize();
         $.ajax({
             type: "POST",
-            url: "http://ajax.frontend.itheima.net/api/reguser",
+            url: "/api/reguser",
             data,
             success: (res) => {
                 if (res.status !== 0) {
@@ -68,13 +68,16 @@ $(function () {
         let data = $('#loginForm').serialize()
         $.ajax({
             type: 'POST',
-            url: "http://ajax.frontend.itheima.net/api/login",
+            url: "/api/login",
             data,
             success: function (res) {
                 console.log(res);
                 if (res.status !== 0) {
                     return layer.msg(res.message)
                 };
+                // 把 token (令牌) 存贮到本地存储中
+                localStorage.setItem("token", res.token)
+
                 layer.msg('登陆成功', {
                     icon: 1,
                     time: 2000 //2秒关闭（如果不配置，默认是3秒）
