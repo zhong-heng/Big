@@ -50,7 +50,7 @@ $(function () {
         let data = $(this).serialize();
         $.ajax({
             type: "POST",
-            url: "/api/reguser",
+            url: "http://ajax.frontend.itheima.net/api/reguser",
             data,
             success: (res) => {
                 if (res.status !== 0) {
@@ -68,7 +68,7 @@ $(function () {
         let data = $('#loginForm').serialize()
         $.ajax({
             type: 'POST',
-            url: "/api/login",
+            url: "http://ajax.frontend.itheima.net/api/login",
             data,
             success: function (res) {
                 console.log(res);
@@ -82,7 +82,7 @@ $(function () {
                     icon: 1,
                     time: 2000 //2秒关闭（如果不配置，默认是3秒）
                 }, function () {
-                    location.href = '../../home/demo.html'
+                    location.href = '../../home/index.html'
                 });
             }
         })
