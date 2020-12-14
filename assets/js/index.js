@@ -3,7 +3,7 @@ let layer = layui.layer;
 function getAjax() {
 
     $.ajax({
-        url: "http://ajax.frontend.itheima.net/my/userinfo",
+        url: "/my/userinfo",
         headers: {
             // token 的值存储在本地存储中，需要从本地存储中来获取到
             // Authorization 这个不是随便写的，后端定义要求的

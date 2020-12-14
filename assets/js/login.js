@@ -50,7 +50,7 @@ $(function () {
         let data = $(this).serialize();
         $.ajax({
             type: "POST",
-            url: "http://ajax.frontend.itheima.net/api/reguser",
+            url: "/api/reguser",
             data,
             success: (res) => {
                 if (res.status !== 0) {
@@ -68,7 +68,7 @@ $(function () {
         let data = $('#loginForm').serialize()
         $.ajax({
             type: 'POST',
-            url: "http://ajax.frontend.itheima.net/api/login",
+            url: "/api/login",
             data,
             success: function (res) {
                 console.log(res);
