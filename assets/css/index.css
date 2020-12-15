@@ -23,6 +23,10 @@
 .layui-body{
     overflow: hidden;
 }
+.layui-body {
+    background-color: #F2F3F5;
+    padding: 20px;
+}
 /* .layui-nav-img {
     display: none;
 } */

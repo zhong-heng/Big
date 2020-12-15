@@ -4,19 +4,19 @@ function getAjax() {
 
     $.ajax({
         url: "/my/userinfo",
-        headers: {
-            // token 的值存储在本地存储中，需要从本地存储中来获取到
-            // Authorization 这个不是随便写的，后端定义要求的
-            Authorization: localStorage.getItem("token"),
-          },
+        // headers: {
+        //     // token 的值存储在本地存储中，需要从本地存储中来获取到
+        //     // Authorization 这个不是随便写的，后端定义要求的
+        //     Authorization: localStorage.getItem("token"),
+        //   },
         success: (res) => {
-            console.log(res);
+            // console.log(res);
             if (res.status !== 0) {
                 // return layer.msg(res.message);
                 localStorage.removeItem("token");
                 location.href = '../../home/login.html'
             }
-            let name = res.data.username || res.data.nickname
+            let name = res.data.nickname || res.data.username
             $('.uname').text(name)
             // console.log(name[0].toUpperCase());
             if (!res.data.user_pic) {
