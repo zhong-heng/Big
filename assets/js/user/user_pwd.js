@@ -8,6 +8,11 @@ form.verify({
         /^[\S]{6,12}$/
         , '密码必须6到12位，且不能出现空格'
     ],
+    oldpass :  function (value) {
+        if (value === $("[name=newPwd]").val()) {
+            return "新旧密码相同"
+        }
+    },
     newPwd : function (value) {
         // console.log(value);
         if (value !== $("#repwd").val()) {
